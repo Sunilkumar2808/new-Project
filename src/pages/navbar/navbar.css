@@ -1,0 +1,97 @@
+/* navbar.css */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #333;
+    padding: 10px;
+    position: relative;
+    z-index: 1000;
+}
+
+.nav-head {
+    padding: 10px;
+
+}
+
+.navbar img {
+    width: 50px;
+}
+
+.toggle-button {
+    display: none;
+    cursor: pointer;
+    color: white;
+}
+
+.navbar ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .toggle-button {
+        display: block;
+        font-size: 30px;
+    }
+
+    .nav-head {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 10px;
+
+    }
+
+    .navbar ul {
+        position: fixed;
+        top: 0;
+        left: -250px;
+        width: 250px;
+        height: 100%;
+        background-color: #444;
+        list-style-type: none;
+        padding: 20px;
+        margin: 0;
+        transition: left 0.3s ease;
+        flex-direction: column;
+    }
+
+    .navbar.active ul {
+        left: 0;
+        display: flex;
+    }
+
+    .navbar li {
+        margin: 15px 0;
+    }
+
+    .close-button {
+        cursor: pointer;
+        color: white;
+        font-size: 24px;
+        display: flex;
+        justify-content: end;
+    }
+}
+
+@media (min-width: 769px) {
+    .close-button {
+        display: none;
+    }
+}
